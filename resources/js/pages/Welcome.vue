@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import { dashboard, login, register } from '@/routes';
+import NavFooter from '@/components/NavFooter.vue';
+import NavMain from '@/components/NavMain.vue';
+import NavHome from '@/components/NavHome.vue';
+import type { NavItem } from '@/types';
 
 withDefaults(
     defineProps<{
@@ -10,6 +14,22 @@ withDefaults(
         canRegister: true,
     },
 );
+
+ const mainNavItems: NavItem[] = [
+                {
+                    title: 'Home',
+                    href: '/',
+                },
+                {
+                    title: 'Login',
+                    href: '/login',
+                },
+                {
+                    title: 'Register',
+                    href: '/register',
+                },
+            ];
+
 </script>
 
 <template>
@@ -23,7 +43,11 @@ withDefaults(
         <header
             class="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl"
         >
-            <nav class="flex items-center justify-end gap-4">
+           
+            <NavHome :nav_links=mainNavItems>
+            </NavHome>
+
+            <!--<nav class="flex items-center justify-end gap-4">
                 <Link
                     v-if="$page.props.auth.user"
                     :href="dashboard()"
@@ -47,7 +71,9 @@ withDefaults(
                     </Link>
                 </template>
             </nav>
+            -->
         </header>
+        
         <div
             class="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0"
         >
@@ -57,7 +83,7 @@ withDefaults(
                 <div
                     class="flex-1 rounded-br-lg rounded-bl-lg bg-white p-6 pb-12 text-[13px] leading-[20px] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-tl-lg lg:rounded-br-none lg:p-20 dark:bg-[#161615] dark:text-[#EDEDEC] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"
                 >
-                    <h1 class="mb-1 font-medium">Let's get started</h1>
+                    <h1 class="mb-1 font-medium">Let's get zooted</h1>
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">
                         Laravel has an incredibly rich ecosystem. <br />We
                         suggest starting with the following.
