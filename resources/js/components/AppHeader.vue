@@ -59,6 +59,11 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Portfolio',
+        href: '/portfolio',
+        icon: LayoutGrid,
+    }
 ];
 
 const rightNavItems: NavItem[] = [

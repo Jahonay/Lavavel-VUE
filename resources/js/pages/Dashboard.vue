@@ -4,7 +4,7 @@ import PlaceholderPattern from '@/components/PlaceholderPattern.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { dashboard } from '@/routes';
 import type { BreadcrumbItem } from '@/types';
-import UserList from '@/components/UserList.vue';
+//import UserList from '@/components/UserList.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -15,7 +15,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Dashboard" /> 
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div
@@ -25,12 +25,12 @@ const breadcrumbs: BreadcrumbItem[] = [
                 <div
                     class="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border"
                 >
-                <Suspense>
+                <!-- <Suspense>
                      <UserList />
                       <template #fallback>
                         <p>Loading user list...</p>
                     </template>
-                </Suspense>
+                </Suspense> -->
                    
                    <!--<PlaceholderPattern />--> 
                 </div>
